@@ -1,0 +1,15 @@
+config _ file
+
+import os
+class Config:
+    SECRET_KEY = os.environ.get('SECRET_KEY') or 'dha'
+    MONGO_URI = os.environ.get('MONGO_URI') or 'mongodb://localhost:27017/'
+    MONGO_DBNAME = os.environ.get('MONGO_DBNAME') or 'user_profiles'
+
+
+RUN file :
+from CRUDProject import app
+
+if __name__=="__main__":
+    app.run()
+
